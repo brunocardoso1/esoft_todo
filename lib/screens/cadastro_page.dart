@@ -64,7 +64,7 @@ class _CadastrarTODOState extends State<CadastrarTODO> {
                                   );
                                   _tarefaId =
                                       await _dbprovide.insertTask(_novaTarefa);
-                                  print("nova tarefa: $_tarefaId");
+                                  print("Nova tarefa: $_tarefaId");
                                   setState(() {
                                     _visivelController = true;
                                     _tituloTarefa = value;
@@ -72,7 +72,7 @@ class _CadastrarTODOState extends State<CadastrarTODO> {
                                 } else {
                                   await _dbprovide.updateTitulo(
                                       _tarefaId, value);
-                                  print("tarefa atualizada");
+                                  print("Tarefa atualizada");
                                 }
                               }
                             },
@@ -81,7 +81,7 @@ class _CadastrarTODOState extends State<CadastrarTODO> {
                               ..text = _tituloTarefa,
                             decoration: InputDecoration(
                               hintText: "Adicionar Titulo",
-                              border: InputBorder.none,
+                              //border: InputBorder.none,
                             ),
                           ),
                         )
@@ -98,7 +98,7 @@ class _CadastrarTODOState extends State<CadastrarTODO> {
                                   _tarefaId, value);
                               _descricaoTarefa = value;
                             } else {
-                              print("update na desc existente");
+                              print("Update executado");
                             }
                           }
                         },
@@ -106,7 +106,7 @@ class _CadastrarTODOState extends State<CadastrarTODO> {
                           ..text = _descricaoTarefa,
                         decoration: InputDecoration(
                           hintText: "Adicione uma descrição para a tarefa",
-                          border: InputBorder.none,
+                          //border: InputBorder.none,
                         ),
                       ),
                     ),
@@ -179,11 +179,11 @@ class _CadastrarTODOState extends State<CadastrarTODO> {
                                               .insertSubTask(_novaSubTarefa);
                                           setState(() {});
                                         }
-                                        print("criando sub task");
+                                        print("Sub-Tarefa criada");
                                       }
                                     },
                                     decoration: InputDecoration(
-                                        hintText: "Coloque itens para tarefa",
+                                        hintText: "Adicionar itens para tarefa",
                                         border: InputBorder.none),
                                   ),
                                 ),

@@ -52,7 +52,7 @@ class IntroPage extends StatelessWidget {
                 },
                 child: Text(
                   "Começar anotações!",
-                  style: TextStyle(color: Colors.black),
+                  style: TextStyle(color: Colors.black, fontSize: 16),
                 ),
                 style: ElevatedButton.styleFrom(
                   primary: laranja,
