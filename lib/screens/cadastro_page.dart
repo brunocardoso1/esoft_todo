@@ -77,7 +77,8 @@ class _CadastrarTODOState extends State<CadastrarTODO> {
                               }
                             },
                             style: TextStyle(fontSize: 24),
-                            controller: TextEditingController()..text = _tituloTarefa,
+                            controller: TextEditingController()
+                              ..text = _tituloTarefa,
                             decoration: InputDecoration(
                               hintText: "Adicionar Titulo",
                               border: InputBorder.none,
@@ -93,7 +94,8 @@ class _CadastrarTODOState extends State<CadastrarTODO> {
                         onSubmitted: (value) async {
                           if (value != "") {
                             if (_tarefaId != 0) {
-                              await _dbprovide.updateDescricao(_tarefaId, value);
+                              await _dbprovide.updateDescricao(
+                                  _tarefaId, value);
                               _descricaoTarefa = value;
                             } else {
                               print("update na desc existente");
@@ -161,7 +163,8 @@ class _CadastrarTODOState extends State<CadastrarTODO> {
                                   padding: const EdgeInsets.symmetric(
                                       horizontal: 15, vertical: 25),
                                   child: TextField(
-                                    controller: TextEditingController()..text = "",
+                                    controller: TextEditingController()
+                                      ..text = "",
                                     onSubmitted: (value) async {
                                       if (value != "") {
                                         if (_tarefaId != 0) {
@@ -198,8 +201,8 @@ class _CadastrarTODOState extends State<CadastrarTODO> {
                       bottom: 20,
                       right: 0,
                       child: FloatingActionButton(
-                        onPressed: () async{
-                          if(_tarefaId != 0){
+                        onPressed: () async {
+                          if (_tarefaId != 0) {
                             await _dbprovide.deleteTarefa(_tarefaId);
                             Navigator.pop(context);
                           }

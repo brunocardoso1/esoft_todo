@@ -3,9 +3,10 @@ class SubTarefa {
   final int tarefaId;
   final String titulo;
   final int feito;
+
   SubTarefa({this.id, this.tarefaId, this.titulo, this.feito});
 
-  Map<String, dynamic> toMap(){
+  Map<String, dynamic> toMap() {
     return {
       'id': id,
       'tarefaId': tarefaId,

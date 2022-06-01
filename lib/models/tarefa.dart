@@ -5,7 +5,7 @@ class Tarefa {
 
   Tarefa({this.id, this.titulo, this.descricao});
 
-  Map<String, dynamic> toMap(){
+  Map<String, dynamic> toMap() {
     return {
       'id': id,
       'titulo': titulo,

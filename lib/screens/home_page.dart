@@ -17,7 +17,6 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
         iconTheme: IconThemeData(
@@ -27,10 +26,14 @@ class _HomePageState extends State<HomePage> {
         elevation: 0,
         title: Padding(
           padding: const EdgeInsets.only(left: 65),
-          child: Text("Bem vindo(a)!", style: TextStyle(
-            color: Colors.black,
-          ),),
-        ),),
+          child: Text(
+            "Bem vindo(a)!",
+            style: TextStyle(
+              color: Colors.black,
+            ),
+          ),
+        ),
+      ),
       backgroundColor: roxo,
       body: SafeArea(
         child: Container(
@@ -43,27 +46,26 @@ class _HomePageState extends State<HomePage> {
               FutureBuilder(
                 initialData: [],
                 future: _dbprovider.getTarefa(),
-                builder: (context, AsyncSnapshot snapshot){
+                builder: (context, AsyncSnapshot snapshot) {
                   return ListView.builder(
                     itemCount: snapshot.data.length,
-                    itemBuilder: (context, index){
+                    itemBuilder: (context, index) {
                       return GestureDetector(
-                        onTap: (){
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => CadastrarTODO(
-                            tarefa: snapshot.data[index],
-                          ))).then((value){
-                            setState(() {
-
-                            });
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => CadastrarTODO(
+                                        tarefa: snapshot.data[index],
+                                      ))).then((value) {
+                            setState(() {});
                           });
-                        }
-                        ,
+                        },
                         child: BuildCard(
                           titulo: snapshot.data[index].titulo,
                           descricao: snapshot.data[index].descricao,
                         ),
                       );
-
                     },
                   );
                 },
@@ -73,11 +75,14 @@ class _HomePageState extends State<HomePage> {
                   right: 0,
                   child: FloatingActionButton(
                     onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => CadastrarTODO(tarefa: null,)),
-                      ).then((value){
-                        setState(() {
-
-                        });
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => CadastrarTODO(
+                                  tarefa: null,
+                                )),
+                      ).then((value) {
+                        setState(() {});
                       });
                     },
                     backgroundColor: laranja,

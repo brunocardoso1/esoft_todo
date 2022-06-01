@@ -16,46 +16,46 @@ class IntroPage extends StatelessWidget {
           children: [
             RichText(
               textAlign: TextAlign.center,
-              text: TextSpan(
-                  children: [
-                    TextSpan(
-                        text: 'Bem-vindo a \n',
-                        style: TextStyle(
-                          fontSize: 24,
-                          color: Colors.black,
-                        )
-                    ),
-                    TextSpan(
-                        text: 'E-Soft Sistemas! \n',
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 24,
-                            fontWeight: FontWeight.bold
-                        )
-                    ),
-                  ]
-              ),
+              text: TextSpan(children: [
+                TextSpan(
+                    text: 'Bem-vindo a \n',
+                    style: TextStyle(
+                      fontSize: 24,
+                      color: Colors.black,
+                    )),
+                TextSpan(
+                    text: 'E-Soft Sistemas! \n',
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold)),
+              ]),
             ),
             Padding(
               padding: const EdgeInsets.all(16.0),
-              child: Text("Tudo sob controle.", style: TextStyle(
-                  color: Colors.deepPurple,
-                  fontSize: 32,
-                  fontWeight: FontWeight.bold
-              ),),
+              child: Text(
+                "Tudo sob controle.",
+                style: TextStyle(
+                    color: Colors.deepPurple,
+                    fontSize: 32,
+                    fontWeight: FontWeight.bold),
+              ),
             ),
             Padding(
               padding: const EdgeInsets.only(top: 80),
               child: ElevatedButton(
-                onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => const HomePage()));
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const HomePage()));
                 },
-                child: Text("Começar anotações!", style: TextStyle(
-                    color: Colors.black
-                ),),
+                child: Text(
+                  "Começar anotações!",
+                  style: TextStyle(color: Colors.black),
+                ),
                 style: ElevatedButton.styleFrom(
                   primary: laranja,
-
                 ),
               ),
             )
